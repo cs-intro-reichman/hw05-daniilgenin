@@ -105,18 +105,14 @@ public class GameOfLife {
 	public static int cellValue(int[][] board, int i, int j) {
 		//// Replace the following statement with your code.
 		int alive = count(board, i, j);
-		if (board[i][j] == 1 && alive < 2 ){
+		if (board[i][j] == 1 && (alive < 2 || alive > 3))
 			return 0;
-		}
-		else if (board[i][j] == 1 && (alive == 3 || alive == 2)){
+		else if (board[i][j] == 1 && (alive == 3 || alive == 2))
 			return 1;
-		}
-		else if (board[i][j] == 1 && alive > 3 ){
+		else if (board[i][j] == 1 && alive > 3 )
 			return 0;
-		}
-		else if (board[i][j] == 0 && alive == 3){
+		else if (board[i][j] == 0 && alive == 3)
 			return 1;
-		}
 		return 0;
 	}
 	
