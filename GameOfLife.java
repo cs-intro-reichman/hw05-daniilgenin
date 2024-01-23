@@ -69,11 +69,13 @@ public class GameOfLife {
 		int ln = board.length;
 		for (int i = 1; i < ln - 1; i++) {
 			row = in.readLine();
-			for (int j = 1; j < row.length() + 1; j++) {
-				if (row.charAt(j - 1) == 'x')
-					board[i][j] = 1;
-				else if (row.charAt(j - 1) == '.')
-					board[i][j] = 0;
+			if (!row.isEmpty()) {
+				for (int j = 1; j < row.length() + 1; j++) {
+					if (row.charAt(j - 1) == 'x')
+						board[i][j] = 1;
+					else if (row.charAt(j - 1) == '.')
+						board[i][j] = 0;
+				}
 			}
 		}
 		return board;
