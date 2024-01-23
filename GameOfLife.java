@@ -109,8 +109,6 @@ public class GameOfLife {
 			return 0;
 		else if (board[i][j] == 1 && (alive == 3 || alive == 2))
 			return 1;
-		else if (board[i][j] == 1 && alive > 3 )
-			return 0;
 		else if (board[i][j] == 0 && alive == 3)
 			return 1;
 		return 0;
